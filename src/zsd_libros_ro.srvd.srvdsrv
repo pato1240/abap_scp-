@@ -1,0 +1,5 @@
+@EndUserText.label: 'Libros RO'
+define service ZSD_LIBROS_RO {
+  expose Z_B_VIRT_LIB_LIST as libros;
+  expose Z_B_DET_CLIENTE   as clientes;
+}

@@ -1,0 +1,45 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Cliente',
+                  title: {type: #STANDARD,
+                          value: 'NombreCompleto'},
+                  description: {type: #STANDARD,
+                                value: 'IdCliente'},
+                  imageUrl: 'Url'
+                }
+                
+annotate view Z_B_DET_CLIENTE with
+{
+
+  @UI.facet: [{ id: 'DetallesCliente',
+                label: 'Detalles del Cliente',
+                type: #COLLECTION,
+                position: 10},
+                { id: 'Cliente',
+                  parentId: 'DetallesCLiente',
+                  label: 'Detalles',
+                  type: #FIELDGROUP_REFERENCE,
+                  targetQualifier: 'DetallesCliente',
+                  position: 10}]
+                   
+  @UI.lineItem: [{ position: 10, importance: #HIGH, label: 'Nombre' }]
+  Nombre;
+
+  @UI.lineItem: [{ position: 20, importance: #HIGH, label: 'Apellido' }]
+  Apellidos;
+  
+  @UI.fieldGroup: [{ qualifier: 'DetallesCliente', position: 30 }]
+  @UI.lineItem: [{ position: 30, importance: #HIGH }]
+  Email;
+
+  @UI.fieldGroup: [{ qualifier: 'DetallesCliente', position: 10 }]
+  @UI.lineItem: [{ position: 40, importance: #HIGH, label: 'ID Cliente' }]
+  IdCliente;
+
+  @UI.lineItem: [{ position: 50, importance: #HIGH, label: 'ID Libro' }]
+  IdLibro;
+
+  @UI.fieldGroup: [{ qualifier: 'DetallesCliente', position: 20 }]
+  @UI.lineItem: [{ position: 60, importance: #HIGH, label: 'Tipo Acceso' }]
+  Acceso;
+
+}
